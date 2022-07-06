@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.partyService.party.repository.PartyMapper">
+<insert id="registerParty" parameterType="PartyDto">
+    insert
+        into
+    party(userId,shopId)
+         values
+    (#{userId},#{shopId})
+
+</insert>
+
+<!--<select id="findAll" resultType="PartyDto">-->
+<!--    SELECT-->
+<!--        p.id, p.userId, p.shopId, u.name-->
+<!--    FROM-->
+<!--        party p-->
+<!--    LEFT JOIN-->
+<!--        User u-->
+<!--    On-->
+<!--        p.userId = u.id-->
+<!--    ORDER BY-->
+<!--        P.shopId;-->
+<!--</select>-->
+
+    <select id="findAll" resultType="PartyDto">
+        SELECT
+            p.id, p.userId, p.shopId
+        FROM
+            party p
+        ORDER BY
+            P.shopId;
+    </select>
+</mapper>
