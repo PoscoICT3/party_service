@@ -33,6 +33,8 @@ public class PartyController {
         LocalDate localDate = LocalDate.now();
         partyDto.setDate(String.valueOf(localDate));
 
+        System.out.println(partyDto);
+
         Integer partyDtos = partyService.registerParty(partyDto);
         System.out.println("..............findallpary" + findAllParty());
         return findAllParty();

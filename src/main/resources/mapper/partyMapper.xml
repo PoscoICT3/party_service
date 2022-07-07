@@ -5,9 +5,9 @@
 <insert id="registerParty" parameterType="PartyDto">
     insert
         into
-    party(userId,shopId)
+    party(userId,shopId,date)
          values
-    (#{userId},#{shopId})
+    (#{userId},#{shopId},#{date})
 
 </insert>
 

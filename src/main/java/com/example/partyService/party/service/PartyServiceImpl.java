@@ -35,7 +35,7 @@ public class PartyServiceImpl implements PartyService{
                 for(PartyDto x : partydtos){
                         URI uri = UriComponentsBuilder
                                 .fromUriString("http://localhost:8000")
-                                .path("/user/" + x.getId())
+                                .path("/user/" + x.getUserId())
                                 .encode()
                                 .build()
                                 .toUri();
@@ -49,7 +49,7 @@ public class PartyServiceImpl implements PartyService{
                         RestTemplate restTemplate = new RestTemplate();
 
                         UserResponseDto result2 = restTemplate.getForObject(uri,UserResponseDto.class);
-                        System.out.println(result2);
+                        System.out.println("머고" + result2);
 
                         x.setName(result2.getName());
 
